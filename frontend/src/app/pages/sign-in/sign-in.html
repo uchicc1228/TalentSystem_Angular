@@ -1,0 +1,17 @@
+<nz-card class="sign-in-card" nzTitle="Sign In">
+  <form nz-form [formGroup]="form" (ngSubmit)="submit()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your username!">
+        <input nz-input formControlName="username" placeholder="Username" />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your password!">
+        <input nz-input type="password" formControlName="password" placeholder="Password" />
+      </nz-form-control>
+    </nz-form-item>
+
+    <button nz-button nzType="primary" class="login-btn">Sign In</button>
+  </form>
+</nz-card>

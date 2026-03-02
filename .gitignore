@@ -1,0 +1,14 @@
+# Node / Angular
+node_modules/
+dist/
+
+# VS Code
+.vscode/
+
+# Visual Studio
+.vs/
+*.vsidx
+*.suo
+*.user
+*.db
+*.log

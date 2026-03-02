@@ -1,0 +1,24 @@
+<nz-layout>
+  <nz-header class="app-header">
+    <div class="logo">TalentSystem</div>
+    <ul nz-menu nzTheme="dark" nzMode="horizontal" class="menu">
+      <!-- 登入前顯示 Sign In -->
+      <li nz-menu-item *ngIf="!authService.isLoggedIn()" routerLink="/sign-in" routerLinkActive="active">
+        Sign In
+      </li>
+
+      <!-- 登入後顯示 Home -->
+      <li nz-menu-item *ngIf="authService.isLoggedIn()" routerLink="/home" routerLinkActive="active">
+        Home
+      </li>
+
+      <!-- 登入後顯示 Logout -->
+      <li nz-menu-item *ngIf="authService.isLoggedIn()" (click)="logout()">Logout</li>
+    </ul>
+
+    <!-- 歡迎訊息獨立在右側 -->
+    <div class="welcome" *ngIf="authService.isLoggedIn()">
+      歡迎，{{ authService.getUser() }}
+    </div>
+  </nz-header>
+</nz-layout>

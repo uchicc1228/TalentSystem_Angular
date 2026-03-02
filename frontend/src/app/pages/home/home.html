@@ -1,0 +1,50 @@
+<div class="search-bar">
+  <input nz-input placeholder="搜尋名稱或Email" [(ngModel)]="searchText" />
+  <button nz-button nzType="primary" (click)="onSearch()">搜尋</button>
+</div>
+
+<nz-table
+  [nzData]="listOfData"
+  [nzBordered]="true"
+  [nzSize]="'middle'"
+  [nzFrontPagination]="false"
+  [nzPageIndex]="pageIndex"
+  [nzPageSize]="pageSize"
+  [nzTotal]="total"
+  (nzPageIndexChange)="onPageIndexChange($event)"
+  (nzPageSizeChange)="onPageSizeChange($event)"
+  class="center-pagination"
+>
+  <thead>
+    <tr>
+      <th nzWidth="80px">ID</th>
+      <th nzWidth="120px">Name</th>
+      <th>Email</th>
+      <th>Sex</th>
+      <th>Phone</th>
+      <th>Mobile</th>
+      <th>Work Areas</th>
+      <th>Skills</th>
+      <th>Status</th>
+      <th>Creation Time</th>
+      <th>Last Modified At</th>
+      <th>Last Modified By</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of listOfData">
+      <td>{{ item.talentID }}</td>
+      <td>{{ item.talentName }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.sex }}</td>
+      <td>{{ item.phone }}</td>
+      <td>{{ item.mobilePhone }}</td>
+      <td>{{ item.workAreas }}</td>
+      <td>{{ item.skills }}</td>
+      <td>{{ item.status }}</td>
+      <td>{{ item.creationTime }}</td>
+      <td>{{ item.lastModifiedAt }}</td>
+      <td>{{ item.lastModifiedBy }}</td>
+    </tr>
+  </tbody>
+</nz-table>
