@@ -20,7 +20,7 @@ jobs:
         working-directory: frontend
 
       - name: Run build
-        run: npm run build -- --configuration production --no-inline-critical
+        run: npm run ng -- build --configuration production --optimization.styles.inlineCritical=false
         working-directory: frontend
 
   backend-build:
